@@ -3,19 +3,29 @@ function numberOfSignificantFigures(num){
 	if(isNumber(num)){
 		sigstring = num.toString();
 		var pos = 0
-		//check for leading 0s
-		for(var pos; pos<sigstring.length; pos++){
-			if(sigstring.charAt(pos) != 0){
-				break;
+		//whole numbers
+		if(sigstring.indexOf('.') == -1){
+			console.log("whole number");
+			return sigstring.length - pos;
+			//check for leading 0s
+			for(var pos; pos<sigstring.length; pos++){
+				if(sigstring.charAt(pos) != 0){
+					break;
+				}
 			}
+		}	
+		else{
+			console.log("decimal number");
+
 		}
-	return sigstring.length - pos;
 	}
 	else{
 		return -1;
 	}
+	return sigstring.length - pos;
 }
 
 function isNumber(num){
-	return ! isNaN(parseFloat(num));
+	return ! isNaN(parseFloat(num)) && isFinite(num);
 }
+
