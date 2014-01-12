@@ -3,9 +3,16 @@
 		<script src="sigfig.js"></script>
 	</head>
 	<body>
-		<form name="calculatorvalues" action="" method="get">
-			Enter a value: </br>
-			<input type="text" name="inputbox" value="">
-			<input type="button" name="evaluate" value="Submit" onClick="evaluateSigFigs(this.form)">
+		<div id="content">
+			<div id="input">
+				Enter a number:
+				<form name="inputForm" action="" method="get">
+				<input type="text" type="number" name="num1" id="num1" value=""><br>
+				<input type="button" name="submit" value="Submit" onClick="calculateSigFigs()">
+				</form>		
+			</div>	
+			<div id="answer">
+			</div>
+		</div>				
 	</body>
 </html>

@@ -18,29 +18,35 @@ function numberOfSignificantFigures(num){
 		}
 
 		//decimal number
+		//@fails 0.0004
 		else{
 			console.log("decimal number");
+			return sigstring.length-1
 
 		}
-	return sigstring.length;
 }
 
 function isNumber(num){
 	return ! isNaN(parseFloat(num)) && isFinite(num);
 }
 
-function evaluateSigFigs(form){
-	alert("You entered: " + form.inputbox.value);
-	numstring = num.toString();
-	//remove commas
-	numstring = num.replace(/','/g,'');
+function numberSanitizer(numstring){
 	//remove lead zeros
 	var leadzeros = 0;
-	for(var i = 0; i < sigstring.length; i++){
-		if(sigstring.charAt(i) != '0'){
+	for(var i = 0; i < numstring.length; i++){
+		if(numstring.charAt(i) != '0'){
 			break;
 		}
 		leadzeros++;
 	}
-	numstring = num.substring(leadzeros, numstring.length -1);
+	numstring = numstring.substring(leadzeros, numstring.length);
+	return numstring;
+}
+
+function calculateSigFigs(){
+	var num1= document.getElementById("num1").value;
+	if(isNumber(num1)){
+		answer = numberOfSignificantFigures(numberSanitizer(num1));
+		document.getElementById("answer").innerHTML=answer;	
+	}
 }
