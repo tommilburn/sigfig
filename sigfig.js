@@ -29,7 +29,8 @@ function isNumber(num){
 	return ! isNaN(parseFloat(num)) && isFinite(num);
 }
 
-function numberSanitizer(num){
+function evaluateSigFigs(form){
+	alert("You entered: " + form.inputbox.value);
 	numstring = num.toString();
 	//remove commas
 	numstring = num.replace(/','/g,'');
