@@ -1,12 +1,9 @@
 function numberOfSignificantFigures(num){
 	var figures = 0;
-		console.log("initial number: " + parseInt(num, 10));
 		sigstring = num.toString();
-		console.log("this is the number: " + parseFloat(num, 10) + " this is the number  string: " + sigstring);
 		var pos = 0
 		//whole numbers
 		if(sigstring.indexOf('.') == -1){
-			console.log("whole number");
 			var trailzeros = 0;
 			for(var i = sigstring.length-1; i>=0; i--){
 				if(sigstring.charAt(i) != '0'){
@@ -18,9 +15,10 @@ function numberOfSignificantFigures(num){
 		}
 
 		//decimal number
-		//@fails 0.0004
 		else{
-			console.log("decimal number");
+			if(num<1){
+				return numberSanitizer(sigstring.substring(sigstring.indexOf('.')+1)).length;
+			}
 			return sigstring.length-1
 
 		}
@@ -31,6 +29,7 @@ function isNumber(num){
 }
 
 function numberSanitizer(numstring){
+	numstring = numstring.replace(/[A-Za-z,]/g, '');
 	//remove lead zeros
 	var leadzeros = 0;
 	for(var i = 0; i < numstring.length; i++){
@@ -40,13 +39,20 @@ function numberSanitizer(numstring){
 		leadzeros++;
 	}
 	numstring = numstring.substring(leadzeros, numstring.length);
+	console.log(numstring);
 	return numstring;
 }
 
 function calculateSigFigs(){
 	var num1= document.getElementById("num1").value;
+
+	num1 = numberSanitizer(num1);
 	if(isNumber(num1)){
-		answer = numberOfSignificantFigures(numberSanitizer(num1));
+		document.getElementById("num1").value = num1;
+		answer = numberOfSignificantFigures(num1);
 		document.getElementById("answer").innerHTML=answer;	
+	}
+	else{
+		document.getElementById("answer").innerHTML="error";
 	}
 }

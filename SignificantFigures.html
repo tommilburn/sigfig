@@ -5,10 +5,18 @@
 	<body>
 		<div id="content">
 			<div id="input">
-				Enter a number:
+				<p>Enter a number:</p>
 				<form name="inputForm" action="" method="get">
-				<input type="text" type="number" name="num1" id="num1" value=""><br>
-				<input type="button" name="submit" value="Submit" onClick="calculateSigFigs()">
+				
+				<input type="text" id="num1" value="">
+				<select>
+					<option value="+">+</option>
+					<option value="-">-</option>
+					<option value="*">*</option>
+					<option value="/">/</option>
+				</select>
+				<input type="text" id="num2" value="">
+				<input type="button" name="submit" id="submit" value="Submit" onClick="calculateSigFigs()">
 				</form>		
 			</div>	
 			<div id="answer">
