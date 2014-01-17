@@ -3,11 +3,7 @@ $(document).ready(function(){
 });
 
 $("#num1").keypress(function(key){
-	if(key.which === 13){
-		key.preventDefault();
-		calculateSigFigs();
-	}
-	else if(key.which === 43){
+	if(key.which === 43){
 		//addition		
 		key.preventDefault();
 		$("#addition").attr("checked", true);

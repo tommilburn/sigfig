@@ -66,6 +66,7 @@ function calculateSigFigs(){
 		else if(ops[2].checked){ 
 			calculation = parseFloat(num1) * parseFloat(num2);
 		}
+		
 		else if(ops[3].checked){ 
 			calculation = parseFloat(num1) / parseFloat(num2);
 		}

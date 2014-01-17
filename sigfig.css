@@ -1,4 +1,6 @@
-
+* {
+	font-family: 'Carrois Gothic SC', sans-serif;
+}
 body{
 	background-color: #00aaaa;
 }
@@ -7,4 +9,25 @@ body{
 	width:40%;
 	min-width: 300px;
 	margin:0 auto;
+}
+
+input[type=radio]{
+	display:none;
+	margin:11px;
+}
+
+input[type=radio] + label{
+	display:inline-block;
+	border-radius: 2px;
+	margin:2px;
+	padding:4px 12px;
+	background-color:#e7e7e7;
+	border-color: #000;
+}
+
+input[type=radio]:checked + label {
+	border-radius: 2px;
+	background-color:#000;
+	border-color:#00ff00;
+	border-radius: 2px;
 }

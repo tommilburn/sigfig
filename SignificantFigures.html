@@ -1,6 +1,7 @@
 <html>
 	<head>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Carrois+Gothic+SC' rel='stylesheet' type='text/css'>
 		<link href="sigfig.css" rel="stylesheet" type="text/css">
 	</head>
 	<body>
@@ -11,14 +12,14 @@
 					<input type="text" id="num1" value="">
 					
 					<div class="radiobuttons">
-						<input type="radio" id="addition" name="ops" value="+">
+						<input type="radio" id="addition" name="ops" value="false">
 						<label for="addition">+</label>
-						<input type="radio" id="subtraction" name="ops" value="-">
-						<label for="addition">-</label>
-						<input type="radio" id="multiplication" name="ops" value="*">
-						<label for="addition">*</label>
-						<input type="radio" id="division" name="ops" value="/">
-						<label for="addition">/</label>
+						<input type="radio" id="subtraction" name="ops" value="false">
+						<label for="subtraction">-</label>
+						<input type="radio" id="multiplication" name="ops" value="false">
+						<label for="multiplication">*</label>
+						<input type="radio" id="division" name="ops" value="true">
+						<label for="division">/</label>
 					</div>
 					<input type="text" id="num2" value="">
 					<input type="button" value="Submit" onClick="calculateSigFigs()">
