@@ -1,0 +1,10 @@
+
+body{
+	background-color: #00aaaa;
+}
+#content{
+	background-color: #fff;
+	width:40%;
+	min-width: 300px;
+	margin:0 auto;
+}

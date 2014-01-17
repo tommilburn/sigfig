@@ -46,7 +46,6 @@ function numberSanitizer(numstring){
 function calculateSigFigs(){
 	var num1 = document.getElementById("num1").value;
 	var num2 = document.getElementById("num2").value;
-	var op = document.getElementById("op").value;
 	var answerPrecision;
 	var calculation;
 	
@@ -56,20 +55,25 @@ function calculateSigFigs(){
 	if(isNumber(num1) && isNumber(num2)){
 		answerPrecision = Math.min(numberOfSignificantFigures(num1), numberOfSignificantFigures(num2));
 		console.log(answerPrecision);
-		switch(op){
-			case "+":
-				calculation = parseFloat(num1) + parseFloat(num2);
-				break;
-			case "-": 
-				calculation = parseFloat(num1) - parseFloat(num2);
-				break;
-			case "*":
-				calculation = parseFloat(num1) * parseFloat(num2);
-				break;
-			case "/":
-				calculation = parseFloat(num1) / parseFloat(num2);
-				break;
+		var ops = document.getElementsByName("ops");
+		
+		if(ops[0].checked){
+			calculation = parseFloat(num1) + parseFloat(num2);
 		}
+		else if(ops[1].checked){ 
+			calculation = parseFloat(num1) - parseFloat(num2);
+		}
+		else if(ops[2].checked){ 
+			calculation = parseFloat(num1) * parseFloat(num2);
+		}
+		else if(ops[3].checked){ 
+			calculation = parseFloat(num1) / parseFloat(num2);
+		}
+		else{
+			document.getElementById("answer").innerHTML="no operation";
+			return;
+		}
+
 		answer = new Number(calculation);
 		answer = parseFloat(answer.toPrecision(answerPrecision));
 		console.log(answer);
@@ -78,4 +82,8 @@ function calculateSigFigs(){
 	else{
 		document.getElementById("answer").innerHTML="error";
 	}
+}
+
+function getOp(){
+
 }

@@ -1,8 +1,7 @@
 <html>
 	<head>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
-		<script src="sigfig.js"></script>
-
+		<link href="sigfig.css" rel="stylesheet" type="text/css">
 	</head>
 	<body>
 		<div id="content">
@@ -10,12 +9,17 @@
 				<p>Enter a number:</p>
 				<form name="inputForm" action="" method="get">
 					<input type="text" id="num1" value="">
-					<select id="op">
-						<option value="+">+</option>
-						<option value="-">-</option>
-						<option value="*">*</option>
-						<option value="/">/</option>
-					</select>
+					
+					<div class="radiobuttons">
+						<input type="radio" id="addition" name="ops" value="+">
+						<label for="addition">+</label>
+						<input type="radio" id="subtraction" name="ops" value="-">
+						<label for="addition">-</label>
+						<input type="radio" id="multiplication" name="ops" value="*">
+						<label for="addition">*</label>
+						<input type="radio" id="division" name="ops" value="/">
+						<label for="addition">/</label>
+					</div>
 					<input type="text" id="num2" value="">
 					<input type="button" value="Submit" onClick="calculateSigFigs()">
 				</form>		
@@ -23,7 +27,8 @@
 			<div id="answer">
 			</div>
 		</div>		
-				<script src="interface.js"></script>
-		
+
+		<script src="interface.js"></script>
+		<script src="sigfig.js"></script>
 	</body>
 </html>
