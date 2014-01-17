@@ -1,26 +1,29 @@
 <html>
 	<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
 		<script src="sigfig.js"></script>
+
 	</head>
 	<body>
 		<div id="content">
 			<div id="input">
 				<p>Enter a number:</p>
 				<form name="inputForm" action="" method="get">
-				
-				<input type="text" id="num1" value="">
-				<select id="op">
-					<option value="+">+</option>
-					<option value="-">-</option>
-					<option value="*">*</option>
-					<option value="/">/</option>
-				</select>
-				<input type="text" id="num2" value="">
-				<input type="button" name="submit" id="submit" value="Submit" onClick="calculateSigFigs()">
+					<input type="text" id="num1" value="">
+					<select id="op">
+						<option value="+">+</option>
+						<option value="-">-</option>
+						<option value="*">*</option>
+						<option value="/">/</option>
+					</select>
+					<input type="text" id="num2" value="">
+					<input type="button" value="Submit" onClick="calculateSigFigs()">
 				</form>		
 			</div>	
 			<div id="answer">
 			</div>
-		</div>				
+		</div>		
+				<script src="interface.js"></script>
+		
 	</body>
 </html>

@@ -48,7 +48,7 @@ function calculateSigFigs(){
 	var num2 = document.getElementById("num2").value;
 	var op = document.getElementById("op").value;
 	var answerPrecision;
-	var answer;
+	var calculation;
 	
 	num1 = numberSanitizer(num1.toString());
 	num2 = numberSanitizer(num2.toString());
@@ -58,19 +58,22 @@ function calculateSigFigs(){
 		console.log(answerPrecision);
 		switch(op){
 			case "+":
-				console.log("addition");
+				calculation = parseFloat(num1) + parseFloat(num2);
 				break;
 			case "-": 
-				console.log("subtraction");
+				calculation = parseFloat(num1) - parseFloat(num2);
 				break;
 			case "*":
-				console.log("multiplication");
+				calculation = parseFloat(num1) * parseFloat(num2);
 				break;
 			case "/":
-				console.log("division");
+				calculation = parseFloat(num1) / parseFloat(num2);
 				break;
 		}
-		answer.toPrecision(answerPrecision);
+		answer = new Number(calculation);
+		answer = parseFloat(answer.toPrecision(answerPrecision));
+		console.log(answer);
+		document.getElementById("answer").innerHTML= answer.toLocaleString();
 	}
 	else{
 		document.getElementById("answer").innerHTML="error";
