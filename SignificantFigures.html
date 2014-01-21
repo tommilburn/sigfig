@@ -7,9 +7,9 @@
 	<body>
 		<div id="content">
 			<div id="input">
-				<p>Enter a number:</p>
+				<p>Enter some numbers:</p>
 				<form name="inputForm" action="" method="get">
-					<input type="text" id="num1" value="">
+					<input type="text" id="num1" value="" autocomplete="off">
 					
 					<div class="radiobuttons">
 						<input type="radio" id="addition" name="ops" value="false">
@@ -21,8 +21,8 @@
 						<input type="radio" id="division" name="ops" value="true">
 						<label for="division">/</label>
 					</div>
-					<input type="text" id="num2" value="">
-					<input type="button" value="Submit" onClick="calculateSigFigs()">
+					<input type="text" id="num2" value="" autocomplete="off"><br>
+					<input type="button" id="submit" value="Submit" onClick="calculateSigFigs()">
 				</form>		
 			</div>	
 			<div id="answer">

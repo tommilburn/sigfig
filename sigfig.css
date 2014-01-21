@@ -1,5 +1,6 @@
 * {
 	font-family: 'Carrois Gothic SC', sans-serif;
+	font-size: 24px
 }
 body{
 	background-color: #00aaaa;
@@ -7,8 +8,15 @@ body{
 #content{
 	background-color: #fff;
 	width:40%;
-	min-width: 300px;
-	margin:0 auto;
+	min-width: 500px;
+	margin:100px auto;
+	padding:15px;
+	text-align: center;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	-moz-box-shadow:     0 0 10px #000000;
+    -webkit-box-shadow:  0 0 10px #000000;
+    box-shadow:          0 0 10px #000000;
 }
 
 input[type=radio]{
@@ -20,14 +28,42 @@ input[type=radio] + label{
 	display:inline-block;
 	border-radius: 2px;
 	margin:2px;
-	padding:4px 12px;
+	padding:.3em .4em;
+	width:1.2em;
+	height:1.4em;
 	background-color:#e7e7e7;
 	border-color: #000;
 }
 
 input[type=radio]:checked + label {
 	border-radius: 2px;
-	background-color:#000;
-	border-color:#00ff00;
-	border-radius: 2px;
+	background-color:#00aaaa;
+}
+
+input[type=text]{
+	height: 2.7em;
+	width: 16em;
+	margin:0.5em;
+	padding:0em 1em;
+	border-width: 1px;
+	-moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+	-webkit-box-shadow: -3px 3px 20px -9px rgba(0,0,0,0.75);
+	-moz-box-shadow: -3px 3px 20px -9px rgba(0,0,0,0.75);
+	box-shadow: -3px 3px 20px -9px rgba(0,0,0,0.75);
+}
+
+#submit{
+	border-width:1px;
+	background-color: #e7e7e7;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+	#content{
+		background-color: #000;
+	}
 }

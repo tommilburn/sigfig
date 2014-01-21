@@ -34,4 +34,28 @@ $("#num2").keypress(function(key){
 		key.preventDefault();
 		calculateSigFigs();
 	}
+	else if(key.which === 43){
+		//addition		
+		key.preventDefault();
+		$("#addition").attr("checked", true);
+		calculateSigFigs();
+	}
+	else if(key.which === 45){
+		//subtraction
+		key.preventDefault();
+		$("#subtraction").attr("checked", true);
+		calculateSigFigs();
+	}
+	else if(key.which === 42){
+		//multiplication
+		key.preventDefault();
+		$("#multiplication").attr("checked", true);
+		calculateSigFigs();
+	}
+	else if(key.which === 47){
+		//division		
+		key.preventDefault();
+		$("#division").attr("checked", true);
+		calculateSigFigs();
+	}
 });

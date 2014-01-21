@@ -46,6 +46,8 @@ function numberSanitizer(numstring){
 function calculateSigFigs(){
 	var num1 = document.getElementById("num1").value;
 	var num2 = document.getElementById("num2").value;
+	var ops = document.getElementsByName("ops");
+
 	var answerPrecision;
 	var calculation;
 	
@@ -55,7 +57,6 @@ function calculateSigFigs(){
 	if(isNumber(num1) && isNumber(num2)){
 		answerPrecision = Math.min(numberOfSignificantFigures(num1), numberOfSignificantFigures(num2));
 		console.log(answerPrecision);
-		var ops = document.getElementsByName("ops");
 		
 		if(ops[0].checked){
 			calculation = parseFloat(num1) + parseFloat(num2);
