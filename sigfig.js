@@ -47,6 +47,7 @@ function calculateSigFigs(){
 	var num1 = document.getElementById("num1").value;
 	var num2 = document.getElementById("num2").value;
 	var ops = document.getElementsByName("ops");
+	var output = document.getElementById("answer");
 
 	var answerPrecision;
 	var calculation;
@@ -72,20 +73,16 @@ function calculateSigFigs(){
 			calculation = parseFloat(num1) / parseFloat(num2);
 		}
 		else{
-			document.getElementById("answer").innerHTML="no operation";
+			output.innerHTML="no operation";
 			return;
 		}
 
 		answer = new Number(calculation);
 		answer = parseFloat(answer.toPrecision(answerPrecision));
 		console.log(answer);
-		document.getElementById("answer").innerHTML= answer.toLocaleString();
+		output.innerHTML= answer.toLocaleString();
 	}
 	else{
-		document.getElementById("answer").innerHTML="error";
+		output.innerHTML="error";
 	}
-}
-
-function getOp(){
-
 }

@@ -59,3 +59,20 @@ $("#num2").keypress(function(key){
 		calculateSigFigs();
 	}
 });
+
+$(":radio").click(function(){
+	if(document.getElementById("num2").value != "" && document.getElementById("num1").value != ""){
+		calculateSigFigs();
+	}
+	else{
+		$("#num2").focus();
+	}
+});
+
+$("#num1").click(function(){
+	this.select();
+});
+
+$("#num2").click(function(){
+	this.select();
+});
