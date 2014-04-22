@@ -57,7 +57,6 @@ function calculateSigFigs(){
 
 	if(isNumber(num1) && isNumber(num2)){
 		answerPrecision = Math.min(numberOfSignificantFigures(num1), numberOfSignificantFigures(num2));
-		console.log(answerPrecision);
 		
 		if(ops[0].checked){
 			calculation = parseFloat(num1) + parseFloat(num2);
@@ -78,9 +77,13 @@ function calculateSigFigs(){
 		}
 
 		answer = new Number(calculation);
-		answer = parseFloat(answer.toPrecision(answerPrecision));
-		console.log(answer);
-		output.innerHTML= answer.toLocaleString();
+		if(answerPrecision != 0){
+			answer = parseFloat(answer.toPrecision(answerPrecision));
+			output.innerHTML= answer.toLocaleString();
+		}
+		else{
+			output.innerHTML= answer.toLocaleString();
+		}
 	}
 	else{
 		output.innerHTML="error";

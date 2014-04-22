@@ -76,3 +76,7 @@ $("#num1").click(function(){
 $("#num2").click(function(){
 	this.select();
 });
+
+$("#answer").click(function(){
+	this.dblclick();
+});
