@@ -37,7 +37,7 @@ input[type=radio] + label{
 
 input[type=radio]:checked + label {
 	border-radius: 2px;
-	background-color:#00aaaa;
+	background-color:#aaccff;
 }
 
 input[type=text]{
